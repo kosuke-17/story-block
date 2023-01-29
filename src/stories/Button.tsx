@@ -8,9 +8,9 @@ export type ButtonProps = MUIButtonProps & { label: string }
 /**
  * Button component for user interaction
  */
-export const Button = ({ label, ...props }: ButtonProps) => {
+export const Button = ({ label, sx, ...props }: ButtonProps) => {
   return (
-    <MUIButton type='button' {...props}>
+    <MUIButton sx={{ color: 'common.white', ...sx }} type='button' {...props}>
       {label}
     </MUIButton>
   )

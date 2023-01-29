@@ -14,7 +14,6 @@ const primarySquareProps: ButtonProps = {
   color: 'primary',
   variant: 'contained',
   label: 'ボタン',
-  sx: { color: 'common.white' },
 }
 PrimarySquare.args = primarySquareProps
 
@@ -23,7 +22,7 @@ const primaryAroundProps: ButtonProps = {
   color: 'primary',
   variant: 'contained',
   label: 'ボタン',
-  sx: { color: 'common.white', borderRadius: '2em' },
+  sx: { borderRadius: '2em' },
 }
 PrimaryAround.args = primaryAroundProps
 
