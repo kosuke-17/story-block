@@ -9,9 +9,5 @@ export type IconButtonProps = MUIIconButtonProps & { icon: React.ReactNode }
  * Icon Button component for user interaction
  */
 export const IconButton = ({ icon, ...props }: IconButtonProps) => {
-  return (
-    <MUIIconButton type='button' {...props}>
-      {icon}
-    </MUIIconButton>
-  )
+  return <MUIIconButton {...props}>{icon}</MUIIconButton>
 }
