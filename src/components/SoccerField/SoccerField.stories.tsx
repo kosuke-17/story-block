@@ -1,5 +1,5 @@
-import SoccerField from './SoccerField'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import SoccerField from '.'
 
 const TemplateSoccer: ComponentStory<typeof SoccerField> = (args) => (
   <SoccerField />
