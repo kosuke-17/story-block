@@ -1,6 +1,13 @@
-import SoccerField from '@/components/SoccerField'
-import { ComponentStory } from '@storybook/react'
+import SoccerField from './SoccerField'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-const Template: ComponentStory<typeof SoccerField> = (args) => <SoccerField />
+const TemplateSoccer: ComponentStory<typeof SoccerField> = (args) => (
+  <SoccerField />
+)
 
-export const Primary = Template.bind({})
+export const Primary = TemplateSoccer.bind({})
+
+export default {
+  title: 'MUI/Soccer',
+  component: SoccerField,
+} as ComponentMeta<typeof SoccerField>
