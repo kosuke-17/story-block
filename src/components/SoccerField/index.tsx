@@ -4,14 +4,17 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
 const SoccerField = () => {
+  const centerCSS = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
   return (
     <Box
       sx={{
         width: '100vw',
         height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        ...centerCSS,
       }}
     >
       <Paper
@@ -24,24 +27,48 @@ const SoccerField = () => {
         elevation={3}
       >
         <Typography variant='h2'>サッカー場</Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <Box sx={centerCSS}>
+          {/* GreenField */}
           <Box
             sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
+              ...centerCSS,
               width: '840px',
               height: '630px',
-              bgcolor: '#228B22',
+              bgcolor: 'primary.main',
             }}
           >
-            SoccerField moved
+            {/* SoccerFieldOutLine */}
+            <Box
+              sx={{
+                ...centerCSS,
+                border: '3px solid #FFFFFF',
+                width: '720px',
+                height: '540px',
+                position: 'relative',
+              }}
+            >
+              {/* Corner Arc */}
+              <Box
+                sx={{
+                  width: '20px',
+                  height: '20px',
+                  top: -3,
+                  left: -3,
+                  border: '3px solid #FFFFFF',
+                  borderBottomRightRadius: '60%',
+                  position: 'absolute',
+                }}
+              />
+              {/* SoccerFieldCenterLine */}
+              <Box
+                sx={{
+                  ...centerCSS,
+                  bgcolor: '#FFFFFF',
+                  width: '3px',
+                  height: '100%',
+                }}
+              />
+            </Box>
           </Box>
         </Box>
       </Paper>
