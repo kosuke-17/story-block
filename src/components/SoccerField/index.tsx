@@ -45,6 +45,15 @@ const SoccerFieldCenterLine = styled(Box)(() => ({
   height: '100%',
 }))
 
+const SoccerFieldCenterCircle = styled(Box)(() => ({
+  ...centerCSS,
+  border: '3px solid #FFFFFF',
+  height: '100px',
+  width: '100px',
+  position: 'absolute',
+  borderRadius: '50%',
+}))
+
 const SoccerField: FC = () => {
   return (
     <SoccerFieldLayout>
@@ -56,6 +65,7 @@ const SoccerField: FC = () => {
             <SoccerFieldOutLine>
               <CornerArc type='LeftTop' />
               <CornerArc type='LeftBottom' />
+              <SoccerFieldCenterCircle />
               <SoccerFieldCenterLine />
               <CornerArc type='RightTop' />
               <CornerArc type='RightBottom' />
