@@ -3,6 +3,7 @@ import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
+import CornerArc from '../CornerArc'
 
 const centerCSS = {
   display: 'flex',
@@ -19,16 +20,6 @@ const SoccerFieldLayout = styled(Box)(() => ({
 const StyledPaper = styled(Paper)(() => ({
   width: '900px',
   height: '90%',
-}))
-
-const CornerLeftTopArc = styled(Box)(() => ({
-  width: '20px',
-  height: '20px',
-  top: -3,
-  left: -3,
-  border: '3px solid #FFFFFF',
-  borderBottomRightRadius: '60%',
-  position: 'absolute',
 }))
 
 const GreenField = styled(Box)(({ theme }) => ({
@@ -61,8 +52,11 @@ const SoccerField = () => {
         <Box sx={centerCSS}>
           <GreenField>
             <SoccerFieldOutLine>
-              <CornerLeftTopArc />
+              <CornerArc type='LeftTop' />
+              <CornerArc type='LeftBottom' />
               <SoccerFieldCenterLine />
+              <CornerArc type='RightTop' />
+              <CornerArc type='RightBottom' />
             </SoccerFieldOutLine>
           </GreenField>
         </Box>
