@@ -1,9 +1,10 @@
-import React from 'react'
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 import CornerArc from '../CornerArc'
+import SoccerGoal from '../SoccerGoal'
+import { FC } from 'react'
 
 const centerCSS = {
   display: 'flex',
@@ -44,13 +45,14 @@ const SoccerFieldCenterLine = styled(Box)(() => ({
   height: '100%',
 }))
 
-const SoccerField = () => {
+const SoccerField: FC = () => {
   return (
     <SoccerFieldLayout>
       <StyledPaper elevation={3}>
         <Typography variant='h2'>サッカー場</Typography>
         <Box sx={centerCSS}>
           <GreenField>
+            <SoccerGoal type='left' />
             <SoccerFieldOutLine>
               <CornerArc type='LeftTop' />
               <CornerArc type='LeftBottom' />
@@ -58,6 +60,7 @@ const SoccerField = () => {
               <CornerArc type='RightTop' />
               <CornerArc type='RightBottom' />
             </SoccerFieldOutLine>
+            <SoccerGoal type='right' />
           </GreenField>
         </Box>
       </StyledPaper>
