@@ -6,6 +6,7 @@ import CornerArc from '../CornerArc'
 import SoccerGoal from '../SoccerGoal'
 import { FC } from 'react'
 
+const LINE_ADJUST = '3px solid #FFFFFF'
 const centerCSS = {
   display: 'flex',
   justifyContent: 'center',
@@ -32,7 +33,7 @@ const GreenField = styled(Box)(({ theme }) => ({
 
 const SoccerFieldOutLine = styled(Box)(() => ({
   ...centerCSS,
-  border: '3px solid #FFFFFF',
+  border: LINE_ADJUST,
   width: '720px',
   height: '540px',
   position: 'relative',
@@ -47,11 +48,62 @@ const SoccerFieldCenterLine = styled(Box)(() => ({
 
 const SoccerFieldCenterCircle = styled(Box)(() => ({
   ...centerCSS,
-  border: '3px solid #FFFFFF',
+  border: LINE_ADJUST,
   height: '100px',
   width: '100px',
   position: 'absolute',
   borderRadius: '50%',
+}))
+
+const GoalArea = styled(Box)(() => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRight: LINE_ADJUST,
+  borderTop: LINE_ADJUST,
+  borderBottom: LINE_ADJUST,
+  width: '60px',
+  height: '200px',
+  left: 0,
+  position: 'absolute',
+}))
+const GoalAreaRight = styled(Box)(() => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderLeft: LINE_ADJUST,
+  borderTop: LINE_ADJUST,
+  borderBottom: LINE_ADJUST,
+  width: '60px',
+  height: '200px',
+  right: 0,
+  position: 'absolute',
+}))
+
+const PenaltyArea = styled(Box)(() => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRight: LINE_ADJUST,
+  borderTop: LINE_ADJUST,
+  borderBottom: LINE_ADJUST,
+  width: '100px',
+  height: '360px',
+  left: 0,
+  position: 'absolute',
+}))
+
+const PenaltyAreaRight = styled(Box)(() => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderLeft: LINE_ADJUST,
+  borderTop: LINE_ADJUST,
+  borderBottom: LINE_ADJUST,
+  width: '100px',
+  height: '360px',
+  right: 0,
+  position: 'absolute',
 }))
 
 const SoccerField: FC = () => {
@@ -65,8 +117,12 @@ const SoccerField: FC = () => {
             <SoccerFieldOutLine>
               <CornerArc type='LeftTop' />
               <CornerArc type='LeftBottom' />
+              <GoalArea />
+              <PenaltyArea />
+              <PenaltyAreaRight />
               <SoccerFieldCenterCircle />
               <SoccerFieldCenterLine />
+              <GoalAreaRight />
               <CornerArc type='RightTop' />
               <CornerArc type='RightBottom' />
             </SoccerFieldOutLine>
